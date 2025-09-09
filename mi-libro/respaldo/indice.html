@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Libro en Línea</title>
+</head>
+<body>
+    <div class="container">
+        <div class="indice">
+            <h1>Índice</h1>
+            <ul>
+                <li><a href="#" data-file="contenido/introduccion.html">Capítulo 1: Introducción</a></li>
+                <li><a href="#" data-file="contenido/desarrollo.html">Capítulo 2: Desarrollo</a></li>
+                <li><a href="#" data-file="contenido/conclusion.html">Capítulo 3: Conclusión</a></li>
+            </ul>
+        </div>
+        <div class="contenido" id="contenido">
+            <h1>Contenido</h1>
+            <div id="contenido-capitulo"></div> <!-- Sección donde se cargará el contenido del capítulo -->
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.indice a').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Evitar el comportamiento por defecto del enlace
+                const file = event.currentTarget.getAttribute('data-file'); // Obtener la ruta del archivo
+                console.log(file); // Para verificar que obtuviste la ruta correcta
+
+                // Lógica para fetch
+                fetch(file)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`La respuesta de la red no fue correcta: ${response.statusText}`);
+                        }
+                        return response.text(); // Cambia a .json() si es un archivo JSON
+                    })
+                    .then(data => {
+                        document.getElementById('contenido-capitulo').innerHTML = data; // Mostrar el contenido en la sección apropiada
+                    })
+                    .catch(error => {
+                        console.error('Hubo un problema con tu operación fetch:', error);
+                    });
+            });
+        });
+    </script>
+</body>
+</html>
