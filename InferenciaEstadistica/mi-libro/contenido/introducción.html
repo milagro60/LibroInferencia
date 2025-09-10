@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Introducción a la Estadística Inferencial</title>
+    <link rel="stylesheet" href="../styles.css"> <!-- Ruta correcta a tu archivo CSS -->
+    <script defer src="../script.js"></script>  <!-- Cargar JavaScript para contenido -->
+</head>
+<body>
+    <h1>Introducción a la Estadística Inferencial</h1>
+
+    <p>
+        Este material está dirigido a los estudiantes de la asignatura de Estadística Inferencial de la carrera de Ingeniería en Software. 
+        La asignatura persigue que los estudiantes adquieran los conocimientos necesarios para que a partir de una muestra puedan tomar decisiones 
+        o hacer inferencias sobre la población en estudio.
+    </p>
+        
+    <h2>Contenidos del Curso</h2>
+    <ul>
+        <li>Repaso de probabilidades - Teoría elemental de Probabilidad</li>
+        <li>Funciones de distribución continuas y discretas</li>
+        <li>Teoría y muestreo</li>
+        <li>Muestreo</li>
+        <li>Pruebas de hipótesis</li>
+        <li>Regresión lineal y correlación</li>
+    </ul>
+
+    <h2>Resultados de Aprendizaje</h2>
+    <ul>
+        <li>Aplicar los conocimientos básicos de probabilidad. Utiliza estimadores muéstrales para describir las distribuciones de probabilidad de 
+        una variable aleatoria discreta o continua.</li>
+        <li>Aplicar los conceptos básicos de la teoría de muestreo, definiendo el método, tamaño y tipo de población, con la finalidad de 
+        calcular la probabilidad de eventos muestrales.</li>
+        <li>Extraer conclusiones útiles sobre características de una población basándose en pruebas estadísticas para realizar una adecuada toma de decisiones.</li>
+    </ul>
+
+    <button id="togglePdf" onclick="handlePdfButton()">Abrir PDF</button> <!-- Botón para abrir/cerrar el PDF -->
+    
+    <div id="pdfContainer"> <!-- Contenedor para el PDF, inicialmente escondido -->
+        <iframe src="../contenido/Syllabus.pdf" width="100%" height="600px" style="border: none;">
+            Este navegador no soporta PDFs. Por favor, descarga el PDF para verlo.
+        </iframe>
+    </div>
+</body>
+</html>
